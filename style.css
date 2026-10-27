@@ -1,0 +1,47 @@
+/* ═════ Hermon Bible — pages légales ══════════════════════════════════════
+   Même direction « librairie » que la page des livres : papier clair, Playfair
+   pour les titres, Montserrat pour le texte. Mêmes variables, aux mêmes
+   valeurs, pour que les deux sites ne divergent pas en silence.
+
+   ⚠️ AUCUN JavaScript ici, et c'est délibéré. Sur la page des livres, une
+   révélation au défilement avait laissé la page ENTIÈREMENT VIDE quand le
+   script échouait. Une politique de confidentialité qui ne s'affiche pas est
+   pire qu'absente : Apple la lit, et un lecteur inquiet aussi.
+   ═══════════════════════════════════════════════════════════════════════ */
+:root{--papier:#F4EFE6;--encre:#241813;--sepia:#8D6A4C;--or:#B98B2E;--gris:#6B5A4E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Montserrat,system-ui,sans-serif;background:var(--papier);color:var(--encre);
+  line-height:1.72;-webkit-font-smoothing:antialiased}
+/* le grain du papier : sans lui, un fond clair fait « gabarit » */
+body::after{content:"";position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+.page{max-width:720px;margin:0 auto;padding:0 24px 96px}
+header{padding:40px 0 10px;display:flex;align-items:baseline;justify-content:space-between;
+  gap:16px;flex-wrap:wrap}
+.mq{font-size:10.5px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--sepia);text-decoration:none}
+.lang{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-decoration:none;
+  color:var(--encre);border:1px solid rgba(36,24,19,.28);padding:7px 13px}
+.lang:hover{background:var(--encre);color:var(--papier)}
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:800;
+  font-size:clamp(32px,5.4vw,52px);line-height:1.08;letter-spacing:-.02em;margin:34px 0 10px}
+.date{font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--or);text-transform:uppercase}
+.chapeau{margin-top:26px;font-size:18px;color:var(--gris)}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(22px,3.2vw,28px);
+  margin:48px 0 12px;line-height:1.2}
+h3{font-size:14px;font-weight:800;letter-spacing:.06em;margin:28px 0 8px}
+p{margin:14px 0}
+ul{margin:14px 0 14px 22px}
+li{margin:9px 0}
+a{color:var(--sepia)}
+strong{font-weight:700}
+/* L'encadré sert aux faits qui surprennent : on ne les noie pas dans un
+   paragraphe. Le liseré porte le sens, la couleur ne porte jamais seule. */
+.note{border-left:3px solid var(--or);background:rgba(185,139,46,.07);
+  padding:16px 20px;margin:24px 0}
+table{border-collapse:collapse;width:100%;margin:20px 0;font-size:15px}
+th,td{text-align:left;padding:11px 10px;border-bottom:1px solid rgba(36,24,19,.14);
+  vertical-align:top}
+th{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gris)}
+footer{border-top:1px solid rgba(36,24,19,.14);margin-top:60px;padding-top:24px;
+  font-size:13px;color:var(--gris)}
